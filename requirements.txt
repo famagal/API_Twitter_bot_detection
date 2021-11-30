@@ -5,9 +5,7 @@ twine
 wheel>=0.29
 
 # data science
-numpy
-pandas
-scikit-learn
+
 
 # tests/linter
 black
@@ -25,5 +23,8 @@ s3fs
 # utilities
 six>=1.14
 joblib
-memoized-property
-termcolor
+
+# Frontend
+streamlit
+fastapi
+uvicorn
