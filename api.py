@@ -6,6 +6,7 @@ import numpy as np
 from API_Twitter_bot_detection.api_get_data import *
 import h5py
 import gcsfs
+import gensim
 
 app = FastAPI()
 
