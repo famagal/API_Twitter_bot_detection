@@ -1,4 +1,5 @@
-FROM python:3.8.6-buster
+FROM python:3.8.12-buster
+#FROM amd64/python:3.8.12-bullseye
 COPY api.py /api.py
 COPY requirements.txt /requirements.txt
 RUN pip install --upgrade pip
