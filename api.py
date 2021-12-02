@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import joblib
 import tensorflow as tf
 from tensorflow.keras.models import load_model
@@ -8,8 +9,16 @@ import h5py
 import gcsfs
 import gensim
 
+
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 gcs_path_user = 'gs://tweet-project-713/models/twitter_bot_detector/v1/Logit_opt.joblib'
 gcs_path_text = 'gs://tweet-project-713/models/twitter_bot_detector/v1/RNN_BIG.h5'
 gcs_path_w2v = 'gs://tweet-project-713/data/word2vec.joblib'

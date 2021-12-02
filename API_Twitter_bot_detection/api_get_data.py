@@ -103,8 +103,8 @@ def tweet_data_request(user_processed):
             'n_mentions'
         ]]
 
-    except:
-        print('Could not fetch tweets from user.')
+    except Exception as e:
+        print(f'Could not fetch tweets from user.{str(e)}')
         df = pd.DataFrame(columns={'empty': 0})
 
     return df
