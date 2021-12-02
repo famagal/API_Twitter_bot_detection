@@ -25,7 +25,7 @@ gcs_path_text = 'gs://tweet-project-713/models/twitter_bot_detector/v1/CNN_BIG2.
 
 model_user = joblib.load(tf.io.gfile.GFile(gcs_path_user, 'rb'))
 
-model_text = load_model(h5py.File(tf.io.gfile.GFile(gcs_path_text, 'rb'), 'r'))
+#model_text = load_model(h5py.File(tf.io.gfile.GFile(gcs_path_text, 'rb'), 'r'))
 
 #word2vec = joblib.load(tf.io.gfile.GFile(gcs_path_w2v, 'rb'))
 
