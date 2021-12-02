@@ -33,3 +33,4 @@ uvicorn
 
 #Text
 nltk
+gensim
