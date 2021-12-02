@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 gcs_path_user = 'gs://tweet-project-713/models/twitter_bot_detector/v1/Logit_opt.joblib'
-gcs_path_text = 'gs://tweet-project-713/models/twitter_bot_detector/v1/RNN_BIG.h5'
+gcs_path_text = 'gs://tweet-project-713/models/twitter_bot_detector/v1/RNN_BIG_DROP.h5'
 gcs_path_w2v = 'gs://tweet-project-713/data/word2vec.joblib'
 
 model_user = joblib.load(tf.io.gfile.GFile(gcs_path_user, 'rb'))
