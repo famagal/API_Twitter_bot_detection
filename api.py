@@ -45,7 +45,7 @@ def predict(username):
             X_tweet = tweet_preprocessing(tweets, word2vec)
             pred_user = model_user.predict(X_user)
             pred_text = np.mean(model_text.predict(X_tweet))
-            return {'user_level_prediction': str(pred_user[0]), 'tweet_level_prediction': str(pred_text)}
+            return {'user_level_prediction': str(pred_user[0]), 'tweet_level_prediction': str(round(pred_text))}
         else:
             pred_user = model_user.predict(X_user)
             return {'user_level_prediction' : str(pred_user), 'tweet_level_prediction': 'could not fetch tweets for the specified user'}
