@@ -33,7 +33,7 @@ def user_data_request(username):
         ]]
         return user_processed
     except:
-        return None
+        return '0'
 
 
 def tweet_data_request(user_processed):
