@@ -33,7 +33,7 @@ def user_data_request(username):
         ]]
         return user_processed
     except:
-        return 'No user data available. Check username for misspellings'
+        return None
 
 
 def tweet_data_request(user_processed):
