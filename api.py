@@ -1,3 +1,5 @@
+import nltk
+nltk.download('stopwords')
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import joblib
