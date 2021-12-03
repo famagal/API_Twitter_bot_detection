@@ -1,5 +1,7 @@
 import nltk
 nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('wordnet')
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import joblib
