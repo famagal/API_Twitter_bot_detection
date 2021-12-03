@@ -33,7 +33,9 @@ def user_data_request(username):
         ]]
         return user_processed
     except:
-        return '0'
+        df = pd.DataFrame(columns={'empty': 0})
+
+        return df
 
 
 def tweet_data_request(user_processed):

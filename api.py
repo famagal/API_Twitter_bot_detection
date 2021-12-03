@@ -38,7 +38,7 @@ word2vec = joblib.load(tf.io.gfile.GFile(gcs_path_w2v, 'rb'))
 @app.get("/predict")
 def predict(username):
     user = user_data_request(username)
-    if user != '0':
+    if 'empty' not in user.columns:
         tweets = tweet_data_request(user)
         X_user = user_preprocessing(tweets, user)
         if 'empty' not in tweets.columns:
