@@ -44,10 +44,18 @@ def predict(username):
         if 'empty' not in tweets.columns:
             X_tweet = tweet_preprocessing(tweets, word2vec)
             pred_user = model_user.predict(X_user)
+            bot_proba = model_user.predict_proba(X_user)[0][1]
             pred_text = np.mean(model_text.predict(X_tweet))
-            return {'user_level_prediction': str(pred_user[0]), 'tweet_level_prediction': str(round(pred_text))}
+            return {'user_level_prediction': str(pred_user[0]),
+                    'tweet_level_prediction': str(round(pred_text)),
+                    'bot_proba_user': str(bot_proba),
+                    'tweet_proba': str(pred_text)
+                    }
         else:
             pred_user = model_user.predict(X_user)
-            return {'user_level_prediction' : str(pred_user), 'tweet_level_prediction': 'could not fetch tweets for the specified user'}
+            bot_proba = model_user.predict_proba(X_user)[0][1]
+            return {'user_level_prediction' : str(pred_user),
+                    'bot_proba_user': str(bot_proba),
+                    'tweet_level_prediction': 'could not fetch tweets for the specified user'}
     else:
         return {'oops': 'user could not be found'}
