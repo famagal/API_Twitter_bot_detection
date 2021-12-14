@@ -1,6 +1,6 @@
 # Data analysis
 - Document here the project: API_Twitter_bot_detection
-- Description: Project Description
+- Description: This Project contains the code for the API used by the Twitter_bot_detection_713 project, which is housed on GCP.
 - Data Source:
 - Type of analysis:
 
